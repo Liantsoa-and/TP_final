@@ -122,6 +122,8 @@ create or replace view v_tp_final_objet_image as
 select o.*, im.nom_image from tp_final_objet as o 
 join tp_final_images_objet as im on o.id_objet = im.id_objet;
 
+ALTER TABLE tp_final_emprunt ADD COLUMN etat_retour BOOLEAN NOT NULL DEFAULT FALSE;
+
 /* insert into tp_final_images_objet (id_objet, nom_image) values
 (1, 'creme_hydratante.jpg'),
 (2, 'perceuse_electrique.jpg'),

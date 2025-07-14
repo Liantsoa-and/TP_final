@@ -41,6 +41,9 @@ session_start();
                     <a class="nav-link" href="liste_membre.php">Tous les membres</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="nouvelle.php">Objets retournes</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../inc/deconnexion.php">Déconnexion</a>
                 </li>
 
