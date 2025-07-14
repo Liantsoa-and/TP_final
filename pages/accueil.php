@@ -20,7 +20,12 @@ $objets = avoir_objets();
                     <td><a href="fiche.php?id_objet=<?= $obj["id_objet"]; ?>"><?= htmlspecialchars($obj["nom_objet"]); ?></a></td>
                     <?php $verifie = emprunt_current($obj["id_objet"]); ?>
                     <td class="<?= $verifie ? 'text-danger' : 'text-success' ?>">
-                        <?= $verifie ? 'Occupé jusqu’au '.$verifie["date_retour"] : 'Disponible'; ?>
+                        <?php if($verifie != false){ 
+                            echo 'Occupé jusqu’au '.$verifie["date_retour"]; 
+                        } else {?>
+                        <!-- <?= $verifie ? 'Occupé jusqu’au '.$verifie["date_retour"] : 'Disponible '; ?> -->
+                         Disponible <a href="emprunt.php?id_membre=<?= $_SESSION['user']["id_membre"] ?>&id_objet=<?= $obj["id_objet"]; ?>"><button>Emprunter</button></a>
+                         <?php } ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

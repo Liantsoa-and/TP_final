@@ -18,7 +18,7 @@ session_start();
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-3">
     <div class="container">
-        <a class="navbar-brand fw-bold text-primary" href="accueil.php">Objets Partagés</a>
+        <a class="navbar-brand fw-bold text-primary" href="accueil.php">Objets</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +41,7 @@ session_start();
                     <a class="nav-link" href="liste_membre.php">Tous les membres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="deconnexion.php">Déconnexion</a>
+                    <a class="nav-link" href="../inc/deconnexion.php">Déconnexion</a>
                 </li>
 
             </ul>

@@ -188,6 +188,20 @@ function avoir_membres(){
         $retour[] = $donnes;
     }
     return $retour;
+}function emprunter_objet($idmembre,$id_objet,$date_retour){
+    $connexion = connexion();
+
+    $sql = "INSERT INTO tp_final_emprunt (id_objet,id_membre,date_emprunt,date_retour) 
+    VALUES ('$id_objet','$idmembre',NOW(),'$date_retour')";
+    $result = mysqli_query($connexion, $sql);
+
+    if($result){
+        $id_emprunt = mysqli_insert_id($connexion);
+    } else {
+        $id_emprunt = false;
+    }
 }
+
+
 
 ?>
