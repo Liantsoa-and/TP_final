@@ -38,6 +38,9 @@ session_start();
                     <a class="nav-link" href="nouveau.php">Ajouter un objet</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="liste_membre.php">Tous les membres</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="deconnexion.php">Déconnexion</a>
                 </li>
 

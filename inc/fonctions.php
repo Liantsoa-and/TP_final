@@ -150,4 +150,39 @@ function ajouter_objet($nom,$id_categorie,$image,$idmembre){
 
 }
 
+function avoir_membre_id($idmembre){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM  tp_final_membre WHERE id_membre = '$idmembre'";
+    $result = mysqli_query($connexion, $sql);
+
+    return $result;
+}
+
+function avoir_objets_membre($idmembre){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM tp_final_objet WHERE id_membre='$idmembre'";
+    $result = mysqli_query($connexion, $sql);
+    $retour = [];
+
+    while($donnes = mysqli_fetch_assoc($result)){
+        $retour[] = $donnes;
+    }
+    return $retour;
+}
+
+function avoir_membres(){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM tp_final_membre";
+    $result = mysqli_query($connexion, $sql);
+    $retour = [];
+
+    while($donnes = mysqli_fetch_assoc($result)){
+        $retour[] = $donnes;
+    }
+    return $retour;
+}
+
 ?>
