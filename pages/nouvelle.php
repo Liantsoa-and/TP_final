@@ -1,6 +1,4 @@
-<?php
-include("header.php");
-?>
+
 <?php
 include("header.php");
 $objets_bon = avoir_objets_retournes_par_etat(0);
