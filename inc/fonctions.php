@@ -64,4 +64,44 @@ function emprunt_current($id_objet){
     return $retour;
 }
 
+function avoir_categories(){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM tp_final_categorie_objet";
+    $result = mysqli_query($connexion, $sql);
+
+    $categories = [];
+    while($categorie = mysqli_fetch_assoc($result)){
+        $categories[] = $categorie;
+    }
+
+    return $categories;
+}
+
+function avoir_objets_categorie($id_categorie){
+    $connexion = connexion();   
+    $sql = "SELECT * FROM tp_final_objet WHERE id_categorie = '$id_categorie'";
+    $result = mysqli_query($connexion, $sql);
+    $objets = [];
+    while($objet = mysqli_fetch_assoc($result)){
+        $objets[] = $objet;
+    }
+    return $objets;
+}
+
+function avoir_categorie($id_categorie){
+    $connexion = connexion();
+    $retour = false;
+
+    $sql = "SELECT * FROM tp_final_categorie_objet WHERE id_categorie = '$id_categorie'";
+    $result = mysqli_query($connexion, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $retour = mysqli_fetch_assoc($result);
+    }
+    fermer_connexion($connexion);
+
+    return $retour;
+}
+
 ?>

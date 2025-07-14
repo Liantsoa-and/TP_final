@@ -8,16 +8,24 @@
         - tp_final_emprunt
  - inserer les donnees [ok]
 
- - factorisation des pages []
+ - factorisation des pages [ok]
 
  - creer pages login et inscription [ok]
    -[ok] les pages login et inscription se redirige vers traitement.php
    -[ok] traitement
+
  - pages liste des objets [ok]
-  - date de retour si emprunt en cours[]
- - liste filtre par categorie []
+  - date de retour si emprunt en cours[ok]
+
+ - liste filtre par categorie [ok]
+  -[ok] afficher une liste des categories (categories.php) 
+  -[ok] lien qui va vers objets.php qui affiche la liste des objets selon leur categorie
 
  - fonctions.php : 
     - [ok] newuser : pour inscription
     - [ok] login : pour se connecter
     - [ok] avoir_objets : pour avoir tous les objets
+    - [ok] emprunt_current : pour savoir si l'objet est disponible
+    - [ok] avoir_categories : pour avoir toutes les categories
+    - [ok] avoir_objets_categorie : pour avoir les objets d'une catégorie
+    - [ok] avoir_categorie : pour avoir une categorie selon son id
