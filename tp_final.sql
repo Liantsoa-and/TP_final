@@ -1,6 +1,6 @@
-drop database if exists tp_final;
+/*drop database if exists tp_final;
 create database tp_final;
-use tp_final;
+use tp_final;*/
  
 create table tp_final_membre (
     id_membre int auto_increment primary key,
