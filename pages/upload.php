@@ -48,7 +48,7 @@
             header("Location:nouveau.php");
         }
     } else {
-        $newName = null;
+        $newName = "./images/Default_image.jpg";
         if(ajouter_objet($nom,$id_categorie,$newName,$id_membre)){
             $_SESSION['mes'] = "Ajout de l'objet ". $nom ." est reussi";
             header("Location:nouveau.php");

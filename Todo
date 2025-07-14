@@ -21,6 +21,13 @@
   -[ok] afficher une liste des categories (categories.php) 
   -[ok] lien qui va vers objets.php qui affiche la liste des objets selon leur categorie
 
+ - fiche objet sans image [ok]
+ - page recherche []
+ - ajouter et upload image [ok]
+   - image par defaut [ok]
+   - suppression image [ ]
+ - 
+
  - fonctions.php : 
     - [ok] newuser : pour inscription
     - [ok] login : pour se connecter
@@ -29,3 +36,5 @@
     - [ok] avoir_categories : pour avoir toutes les categories
     - [ok] avoir_objets_categorie : pour avoir les objets d'une catégorie
     - [ok] avoir_categorie : pour avoir une categorie selon son id
+    - [ok] ajouter_objet 
+    - [ok] avoir_historique_emprunt : pour avoir l'historique des emprunts 
