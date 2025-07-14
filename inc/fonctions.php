@@ -132,4 +132,22 @@ function avoir_historique_emprunts($id_objet){
     return $historique;
 }
 
+function ajouter_objet($nom,$id_categorie,$image,$idmembre){
+    $connexion = connexion();
+
+    $sql1 = "INSERT INTO tp_final_objet (nom_objet,id_categorie,id_membre) 
+    VALUES ('$nom','$id_categorie','$idmembre')";
+    $result1 = mysqli_query($connexion,$sql1);
+
+    if($result1){
+        $id_objet = mysqli_insert_id($connexion);
+        $sql2 = "INSERT INTO tp_final_images_objet (id_objet,nom_image) VALUES ('$id_objet','$image')";
+        $result2 = mysqli_query($connexion,$sql2);
+        if($result2){
+            return true;
+        } else{ return false; }
+    } else { return false;}
+
+}
+
 ?>

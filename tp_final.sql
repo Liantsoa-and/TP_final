@@ -118,6 +118,10 @@ create or replace view v_objet_categorie as
 select o.*, cat.nom_categorie from tp_final_objet as o
 join tp_final_categorie_objet as cat on o.id_categorie = cat.id_categorie;
 
+create or replace view v_tp_final_objet_image as 
+select o.*, im.nom_image from tp_final_objet as o 
+join tp_final_images_objet as im on o.id_objet = im.id_objet;
+
 /* insert into tp_final_images_objet (id_objet, nom_image) values
 (1, 'creme_hydratante.jpg'),
 (2, 'perceuse_electrique.jpg'),
