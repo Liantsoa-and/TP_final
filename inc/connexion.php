@@ -1,15 +1,15 @@
 <?php
 function connexion(){
-    /* $host = 'localhost';
+    $host = 'localhost';
     $user = 'ETU004199';
     $motdepasse = 'ZAldyDZd';
-    $base = 'db_s2_ETU004199'; */ 
+    $base = 'db_s2_ETU004199';  
     /* teste */
 
-    $host = 'localhost';
+    /*$host = 'localhost';
     $user = 'root';
     $motdepasse = '';
-    $base = 'tp_final';
+    $base = 'tp_final';*/
     $bdd = mysqli_connect($host, $user, $motdepasse, $base);
  
     if(!$bdd){
