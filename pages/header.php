@@ -32,8 +32,12 @@ session_start();
                     <a class="nav-link" href="categories.php">Catégories</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="recherche.php">Recherche multicritere</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="deconnexion.php">Déconnexion</a>
                 </li>
+
             </ul>
 
             <?php if (isset($_SESSION["user"])): ?>
