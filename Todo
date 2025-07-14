@@ -1,0 +1,19 @@
+ - creer une base de donnee [ok]
+    - une database tp_final [ok]
+    - table [ok] :  
+        - tp_final_membre
+        - tp_final_categorie_objet
+        - tp_final_objet
+        - tp_final_images_objet
+        - tp_final_emprunt
+ - inserer les donnees [ok]
+
+ - factorisation des pages []
+
+ - creer pages login et inscription []
+ - pages liste des objets []
+ - liste filtre par categorie []
+
+ - fonctions.php : 
+    - 
+
