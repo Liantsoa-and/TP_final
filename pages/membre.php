@@ -13,7 +13,7 @@ $ses_objets = avoir_objets_membre($id_membre);
         <p>Ville : <?= $membre['ville'] ?></p>
         <br>
         <p><h3>Ses objets:</h3></p>
-        <table border="1">
+        <table class="table table-bordered table-hover text-center align-middle bg-white shadow-sm" >
             <tr>
                 <th>Nom objet</th>
                 <th>Categorie</th>
