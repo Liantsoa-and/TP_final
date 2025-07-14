@@ -4,7 +4,7 @@ include("connexion.php");
 function newuser ($nom, $email, $datenaissance,$genre,$ville, $mdp){
     $connexion = connexion();
 
-    $sql = "INSERT INTO membre (nom, email, datenaissance,genre,ville,mdp) 
+    $sql = "INSERT INTO tp_final_membre (nom, email, datenaissance,genre,ville,mdp) 
             VALUES ('%s','%s','%s', '%s','%s','%s')";
     $sql = sprintf($sql, $nom,$email,$datenaissance,$genre,$ville,$mdp);
     $result = mysqli_query($connexion, $sql);
@@ -20,25 +20,48 @@ function newuser ($nom, $email, $datenaissance,$genre,$ville, $mdp){
     return $idmembre;
 }
 
-function login($email,$mdp){
+function login($email, $mdp){
     $connexion = connexion();
-    $retour = null;
+    $retour = false;
 
-    $sql = "SELECT * FROM membre WHERE email = '$email' AND mdp = '$mdp'";
+    $sql = "SELECT * FROM tp_final_membre WHERE email = '$email' AND mdp = '$mdp'";
     $requete = mysqli_query($connexion, $sql);
-    $donne = mysqli_fetch_assoc($requete);
-
-    
     if ($requete && mysqli_num_rows($requete) > 0) {
-        $retour = $donne;
-    }else {
-        $retour = false;
+        $retour = mysqli_fetch_assoc($requete);
     }
     fermer_connexion($connexion);
 
     return $retour;
-
 }
 
+function avoir_objets(){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM tp_final_objet";
+    $result = mysqli_query($connexion, $sql);
+
+    $objets = [];
+    while($objet = mysqli_fetch_assoc($result)){
+        $objets[] = $objet;
+    }
+
+    return $objets;
+}
+
+function emprunt_current($id_objet){
+    $connexion = connexion();
+    $retour = false;
+
+    $sql = "SELECT * FROM v_tp_final_emprunt_current WHERE id_objet='$id_objet' 
+            AND date_retour > NOW()";
+    $result = mysqli_query($connexion, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $retour = mysqli_fetch_assoc($result);
+    } 
+    fermer_connexion($connexion);
+
+    return $retour;
+}
 
 ?>

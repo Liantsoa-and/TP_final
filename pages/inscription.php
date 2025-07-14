@@ -7,16 +7,18 @@
 </head>
 <body>
     <form action="traitement.php" method="post">
-        <input type="text" name="nom" required>
-        <input type="email" name="email" id="" required>
-        <input type="date" name="datenaissance" id="" required>
-        <input type="text" name="ville" id="" required>
+        <p><input type="text" placeholder="nom" name="nom" required></p>
+        <p><input type="email" placeholder="nom@gmail.com" name="email" id="" required></p>
+        <p><input type="date" placeholder="Date de naissance" name="datenaissance" id="" required></p>
+        <p><input type="text" placeholder="Ville" name="ville" id="" required></p>
+        <br>
         <select name="genre" id="" required>
             <option value="M">Masculin</option>
             <option value="F">Feminin</option>
         </select>
-        <input type="password" name="mdp" id="" required>
-        <input type="submit" value="S'inscrire">
+        <br>
+        <p><input type="password" placeholder="Mot de passe" name="mdp" id="" required></p>
+        <p><input type="submit" value="S'inscrire"></p>
     </form>
 </body>
 </html>

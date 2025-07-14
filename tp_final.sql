@@ -98,16 +98,21 @@ insert into tp_final_objet (nom_objet, id_categorie, id_membre) values
 ('Robot pâtissier', 4, 4);
 
 insert into tp_final_emprunt (id_objet, id_membre, date_emprunt, date_retour) values
-(1, 1, '2023-10-01', '2023-10-15'),
+(1, 1, '2023-10-01', '2025-10-15'),
 (2, 2, '2023-10-02', '2023-10-16'),
-(3, 3, '2023-10-03', '2023-10-17'),
+(3, 3, '2023-10-03', '2025-10-17'),
 (4, 4, '2023-10-04', '2023-10-18'),
-(5, 1, '2023-10-05', '2023-10-19'),
+(5, 1, '2023-10-05', '2025-10-19'),
 (6, 2, '2023-10-06', '2023-10-20'),
-(7, 3, '2023-10-07', '2023-10-21'),
+(7, 3, '2023-10-07', '2025-10-21'),
 (8, 4, '2023-10-08', '2023-10-22'),
-(9, 1, '2023-10-09', '2023-10-23'),
+(9, 1, '2023-10-09', '2025-10-23'),
 (10, 2, '2023-10-10', '2023-10-24');
+
+create or replace view v_tp_final_emprunt_current as
+select o.*, e.id_emprunt, e.date_emprunt, e.date_retour, e.id_membre as emprunteur 
+from tp_final_objet as o
+join tp_final_emprunt as e on o.id_objet = e.id_objet;
 
 /* insert into tp_final_images_objet (id_objet, nom_image) values
 (1, 'creme_hydratante.jpg'),

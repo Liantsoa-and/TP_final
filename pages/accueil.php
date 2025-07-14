@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    include("../inc/fonctions.php");
+    session_start();
+
+    $objets = avoir_objets();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +11,17 @@
     <title>Accueil</title>
 </head>
 <body>
-    <p><h1>Bonjour !!!!!!!</h1></p>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+        </tr>
+    <?php foreach($objets as $obj){?>
+        <tr>
+        <td><?php echo $obj["id_objet"]; ?></td>
+        <td><?php echo $obj["nom_objet"]; ?></td>
+        </tr>
+    <?php } ?>
+    </table>
 </body>
 </html>

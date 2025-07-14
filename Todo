@@ -12,9 +12,12 @@
 
  - creer pages login et inscription [ok]
    -[ok] les pages login et inscription se redirige vers traitement.php
- - pages liste des objets []
+   -[ok] traitement
+ - pages liste des objets [ok]
+  - date de retour si emprunt en cours[]
  - liste filtre par categorie []
 
  - fonctions.php : 
     - [ok] newuser : pour inscription
     - [ok] login : pour se connecter
+    - [ok] avoir_objets : pour avoir tous les objets
