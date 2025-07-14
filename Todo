@@ -10,10 +10,11 @@
 
  - factorisation des pages []
 
- - creer pages login et inscription []
+ - creer pages login et inscription [ok]
+   -[ok] les pages login et inscription se redirige vers traitement.php
  - pages liste des objets []
  - liste filtre par categorie []
 
  - fonctions.php : 
-    - 
-
+    - [ok] newuser : pour inscription
+    - [ok] login : pour se connecter
