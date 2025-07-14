@@ -17,7 +17,7 @@ $objets = avoir_objets();
                 <?php foreach($objets as $obj): ?>
                 <tr>
                     <td><?= $obj["id_objet"]; ?></td>
-                    <td><?= htmlspecialchars($obj["nom_objet"]); ?></td>
+                    <td><a href="fiche.php?id_objet=<?= $obj["id_objet"]; ?>"><?= htmlspecialchars($obj["nom_objet"]); ?></a></td>
                     <?php $verifie = emprunt_current($obj["id_objet"]); ?>
                     <td class="<?= $verifie ? 'text-danger' : 'text-success' ?>">
                         <?= $verifie ? 'Occupé jusqu’au '.$verifie["date_retour"] : 'Disponible'; ?>
