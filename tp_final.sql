@@ -1,7 +1,7 @@
 drop database if exists tp_final;
 create database tp_final;
 use tp_final;
-
+ 
 create table tp_final_membre (
     id_membre int auto_increment primary key,
     nom varchar(100) not null,
@@ -113,6 +113,10 @@ create or replace view v_tp_final_emprunt_current as
 select o.*, e.id_emprunt, e.date_emprunt, e.date_retour, e.id_membre as emprunteur 
 from tp_final_objet as o
 join tp_final_emprunt as e on o.id_objet = e.id_objet;
+
+create or replace view v_objet_categorie as
+select o.*, cat.nom_categorie from tp_final_objet as o
+join tp_final_categorie_objet as cat on o.id_categorie = cat.id_categorie;
 
 /* insert into tp_final_images_objet (id_objet, nom_image) values
 (1, 'creme_hydratante.jpg'),

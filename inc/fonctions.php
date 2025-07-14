@@ -103,5 +103,18 @@ function avoir_categorie($id_categorie){
 
     return $retour;
 }
+function avoir_objet_id($id_objet){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM v_objet_categorie WHERE id_objet = '$id_objet'";
+    $result = mysqli_query($connexion, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $retour = mysqli_fetch_assoc($result);
+    }
+    fermer_connexion($connexion);
+
+    return $retour;
+}
 
 ?>
