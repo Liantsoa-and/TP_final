@@ -22,7 +22,7 @@ $ses_objets = avoir_objets_membre($id_membre);
                 $categorie = avoir_categorie($obj['id_categorie']); ?>
                 <tr>
                     <td><?= $obj['nom_objet']; ?></td>
-                    <td><?= $categorie; ?></td>
+                    <td><?= $categorie['nom_categorie']; ?></td>
                 </tr>
             <?php } ?>
         </table>

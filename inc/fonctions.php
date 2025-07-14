@@ -152,13 +152,18 @@ function ajouter_objet($nom,$id_categorie,$image,$idmembre){
 
 function avoir_membre_id($idmembre){
     $connexion = connexion();
+    $retour = null;
 
     $sql = "SELECT * FROM  tp_final_membre WHERE id_membre = '$idmembre'";
     $result = mysqli_query($connexion, $sql);
 
-    return $result;
-}
+    if ($result && mysqli_num_rows($result) > 0) {
+        $retour = mysqli_fetch_assoc($result);
+    }
+    fermer_connexion($connexion);
 
+    return $retour;
+}
 function avoir_objets_membre($idmembre){
     $connexion = connexion();
 
