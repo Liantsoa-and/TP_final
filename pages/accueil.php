@@ -1,28 +1,32 @@
 <?php
-    include("header.php");
-    $objets = avoir_objets();
+include("header.php");
+$objets = avoir_objets();
 ?>
-    <main>
-
-        <table border="1">
-            <tr>
-                <th>Id_objet</th>
-                <th>Nom</th>
-                <th>Disponibilité</th>
-            </tr>
-            <?php foreach($objets as $obj){?>
+<main class="container my-5">
+    <h2 class="mb-4 text-center text-primary">Liste des objets</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-center shadow-sm bg-white">
+            <thead class="table-light">
                 <tr>
-                    <td><?php echo $obj["id_objet"]; ?></td>
-                    <td><?php echo $obj["nom_objet"]; ?></td>
+                    <th>ID</th>
+                    <th>Nom de l'objet</th>
+                    <th>Disponibilité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($objets as $obj): ?>
+                <tr>
+                    <td><?= $obj["id_objet"]; ?></td>
+                    <td><?= htmlspecialchars($obj["nom_objet"]); ?></td>
                     <?php $verifie = emprunt_current($obj["id_objet"]); ?>
-                    <td>
-                        <?php if($verifie != false) 
-                    {echo $verifie["date_retour"];}
-                    else {echo "Disponible";} ?>
-                </td>
-            </tr>
-            <?php } ?>
+                    <td class="<?= $verifie ? 'text-danger' : 'text-success' ?>">
+                        <?= $verifie ? 'Occupé jusqu’au '.$verifie["date_retour"] : 'Disponible'; ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
-    </main>
+    </div>
+</main>
 </body>
 </html>

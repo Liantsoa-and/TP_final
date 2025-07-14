@@ -1,0 +1,44 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+}
+
+.navbar {
+    background-color: #fefefe !important;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.navbar-brand {
+    color: #6c63ff !important; 
+}
+
+.navbar-brand:hover {
+    color: #574b90 !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #6c63ff !important;
+}
+
+.navbar-text strong {
+    color: #6c63ff;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+input::placeholder, select {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
