@@ -117,4 +117,19 @@ function avoir_objet_id($id_objet){
     return $retour;
 }
 
+function avoir_historique_emprunts($id_objet){
+    $connexion = connexion();
+
+    $sql = "SELECT * FROM v_tp_final_emprunt_current WHERE id_objet = '$id_objet' ORDER BY date_emprunt DESC";
+    $result = mysqli_query($connexion, $sql);
+
+    $historique = [];
+    while($emprunt = mysqli_fetch_assoc($result)){
+        $historique[] = $emprunt;
+    }
+
+    fermer_connexion($connexion);
+    return $historique;
+}
+
 ?>
